@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Loginpage from './Pages/Loginpage';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import AdminDashboard from './Pages/AdminDashboard';
+import FacultyPanel from './Pages/FacultyPanel';
+import StudentHome from './Pages/StudentHome';
+import Userlogin from './Pages/Userlogin';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GoogleOAuthProvider clientId="947016098473-oes2psie4hcs95ibovbhihhb801dj4mm.apps.googleusercontent.com">
+      <Router>
+        <Routes>
+          <Route path='/' element={<Loginpage />} />
+          <Route path="/Userlogin" element={<Userlogin />} />
+          <Route path='/admin' element={<AdminDashboard />} />
+          <Route path='/faculty' element={<FacultyPanel />} />
+          <Route path='/student' element={<StudentHome />} />
+        </Routes>
+      </Router>
+
+    </GoogleOAuthProvider>
   );
-}
+};
 
 export default App;
