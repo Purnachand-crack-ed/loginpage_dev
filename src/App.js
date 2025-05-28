@@ -14,13 +14,13 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Loginpage />} />
           <Route path="/Userlogin" element={<Userlogin />} />
-          <Route path='/admin' element={<AdminDashboard />} />
-          <Route path='/faculty' element={<FacultyPanel />} />
-          <Route path='/student' element={<StudentHome />} />
+          <Route path='/admindashboard' element={<AdminDashboard />} />
+          <Route path='/facultydashboard' element={<FacultyPanel />} />
+          <Route path='/studentdashboard' element={<StudentHome />} />
         </Routes>
       </Router>
 
-    </GoogleOAuthProvider>
+     </GoogleOAuthProvider>
   );
 };
 
